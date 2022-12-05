@@ -1,13 +1,23 @@
-import './globals.css';
-import { Inter } from '@next/font/google';
+import "./globals.css";
+import { Poppins, Open_Sans } from "@next/font/google";
 
-const inter = Inter({
-  variable: '--font-inter',
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "600"],
+  subsets: ["latin"],
+});
+const openSans = Open_Sans({
+  variable: "--font-openSans",
+  subsets: ["latin"],
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='en' className={inter.variable}>
+    <html lang="en" className={(poppins.variable, openSans.variable)}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
